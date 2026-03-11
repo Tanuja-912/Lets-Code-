@@ -1,0 +1,19 @@
+Day-3
+*******
+Basic Array problems in striver sheet(Easy level):
+Given an array we have to return the Largest element in the array
+
+Time Complexity :O(n)
+Space Complexity : O(1)
+********************
+Java Implementation:
+
+class Solution {
+    public int largestElement(int[] nums) {
+        int max=0;
+        for(int i=0;i<nums.length;i++){
+            max=Math.max(max,nums[i]);
+        }
+        return max;
+    }
+}
