@@ -1,0 +1,48 @@
+Second Largest Element in an Array
+**********************************
+- Problem Statement
+- Given an integer array, find the second largest element in the array.
+- If the second largest element does not exist, return -1.
+Approach
+To solve this problem efficiently, we traverse the array once while maintaining two variables:
+largest → stores the largest element found so far
+secondLargest → stores the second largest distinct element
+
+--> Steps
+1.Initialize:
+  largest = -1
+  secondLargest = -1
+2.Traverse the array.
+3.For every element:
+  - If the current element is greater than the largest:
+  - Update secondLargest with the previous largest
+  - Update largest with the current element
+
+4.Otherwise:
+- If the element is greater than secondLargest and not equal to largest, update secondLargest.
+5. After completing the loop, return secondLargest.
+- This ensures we always keep track of the two largest distinct values.
+******************************************************************************************
+Time Complexity
+O(n)
+Space Complexity
+O(1)
+*******************************************************************************************
+Java Implementation:
+
+class Solution {
+    public int secondLargestElement(int[] arr) {
+        int largest=-1;
+        int second_largest=-1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>largest){
+                second_largest=l;
+                largest=arr[i];
+            }
+            else if(arr[i]>second_largest && arr[i]!=Largest){
+                second_largest=arr[i];
+            }
+        }
+        return second_largest;
+    }
+}
