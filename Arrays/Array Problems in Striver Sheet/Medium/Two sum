@@ -1,0 +1,48 @@
+Day-5 :
+Two sum Brute Force solution:
+Time complexity: O(n^2)
+
+Java Implementation:
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] res= new int[2];
+        for(int i=0;i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[i]+nums[j]==target){
+                    res[0]=i;
+                    res[1]=j;
+                    break;
+                }
+            }
+        }
+        return res;
+    }
+}
+
+
+
+
+Optimal Solution:
+Using HashMaps
+
+Time complexity : O(n)
+
+import java.util.*;
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+      HashMap<Integer,Integer> map = new HashMap<>();
+      int n= nums.length;
+      int c=0;
+      for(int i=0;i<n;i++){
+         c=target-nums[i];
+        if(map.containsKey(c)){
+            return new int [] {map.get(c),i};
+        }
+        else{
+            map.put(nums[i],i);
+        }
+      }
+      return new int[]{};
+    }
+}
