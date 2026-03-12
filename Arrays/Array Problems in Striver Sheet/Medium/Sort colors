@@ -1,0 +1,31 @@
+Day-5:
+Sort Colors problem:
+Time complexity: O(n)
+
+class Solution {
+    public void sortColors(int[] arr) {
+    //Dutch Nationl Flag Algorithm
+      int low=0;
+      int mid=0;
+      int high=arr.length-1;
+      while(mid<=high){
+        if(arr[mid]==0){
+            int temp = arr[mid];
+            arr[mid]=arr[low];
+            arr[low]=temp;
+            low++;
+            mid++;
+        }
+        else if (arr[mid]==1){
+            mid++;
+        }
+        else{
+            int a = arr[mid];
+            arr[mid]=arr[high];
+            arr[high]=a;
+            high--;
+        }
+      }
+      return;
+    }
+}
