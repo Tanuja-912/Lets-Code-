@@ -1,0 +1,21 @@
+Average of all the elements in array:
+
+Link : https://www.geeksforgeeks.org/problems/average-count-array2215/1
+
+Java Implementation:
+
+class Solution:
+    def countArray(self, arr, x):
+        freq = {}
+        for num in arr:
+            freq[num] = freq.get(num, 0) + 1
+        result = []
+        for i in range(len(arr)):
+            s = arr[i] + x
+            if s % 2 != 0:
+                result.append(0)
+            else:
+                avg = s // 2
+                result.append(freq.get(avg, 0))
+        
+        return result
