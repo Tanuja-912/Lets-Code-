@@ -1,0 +1,20 @@
+Median of an array:
+
+Link : https://www.geeksforgeeks.org/problems/find-the-median0527/1
+
+Java Implemenatation:
+
+class Solution {
+    public double findMedian(int[] arr) {
+        // Code here.
+        Arrays.sort(arr);
+        int n=arr.length;
+        double ans=0;
+        int mid=n/2;
+        if (n % 2 == 0) {
+            return (arr[mid] + arr[mid - 1]) / 2.0;
+        } else {
+            return arr[mid];
+        }
+    }
+}
