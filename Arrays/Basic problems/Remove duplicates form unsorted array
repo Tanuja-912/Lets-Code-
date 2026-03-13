@@ -1,0 +1,21 @@
+Remove duplicates in unsorted array:
+
+Link: https://www.geeksforgeeks.org/problems/remove-duplicates-from-unsorted-array4141/1
+
+Java Implementation:
+
+class Solution {
+
+    static ArrayList<Integer> removeDuplicate(int arr[]) {
+        // code here
+        HashSet<Integer> set = new HashSet<>();
+        ArrayList<Integer> res = new ArrayList<>();
+        for(int num: arr){
+            if(!set.contains(num)){
+                set.add(num);
+                res.add(num);
+            }
+        }
+        return res;
+    }
+}
