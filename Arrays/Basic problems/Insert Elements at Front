@@ -1,0 +1,23 @@
+Insert element at Beginning of array:
+
+class Solution {
+    public static int[] InsertAtFront(int[] arr,int x){
+        int[] newarr=new int[arr.length+1];
+        newarr[0]=x;
+        for(int i=0;i<arr.length;i++){
+            newarr[i+1]=arr[i];
+        }
+        return newarr;
+    }
+}
+    public class Main {
+        public static void main(String[] args){
+        int[] arr = {2,3,4,5,6};
+        int x=1;
+        arr=Solution.InsertAtFront(arr,x);
+        for(int num: arr){
+            System.out.print(num+" ");
+        }
+       System.out.println(); 
+    }
+}
