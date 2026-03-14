@@ -1,0 +1,23 @@
+Insert element at end of array:
+
+class Solution {
+    public static int[] InsertAtEnd(int[] arr,int x){
+        int[] newarr=new int[arr.length+1];
+        for(int i=0;i<arr.length;i++){
+            newarr[i]=arr[i];
+        }
+        newarr[arr.length]=x;
+        return newarr;
+    }
+}
+    public class Main {
+        public static void main(String[] args){
+        int[] arr = {1,2,3,4,5,6};
+        int x=7;
+        arr=Solution.InsertAtEnd(arr,x);
+        for(int num: arr){
+            System.out.print(num+" ");
+        }
+       System.out.println(); 
+    }
+}
