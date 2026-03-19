@@ -1,4 +1,4 @@
-//Day2-->Basic Math in java to have an idea on fundamentals
+//Day2--> Basic Math in java to have an idea on fundamentals
 //Lets check a number is prime or not 
 //GreeksForGreeks Code Link: https://www.geeksforgeeks.org/problems/prime-number2314/1
 // Approach:
