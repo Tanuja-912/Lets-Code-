@@ -1,0 +1,76 @@
+Majority Element:
+
+Link : https://leetcode.com/problems/majority-element/description/
+
+Implementation: (Brute Force)
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int n=nums.length;
+        for(int val:nums){
+            int c=0;
+            for(int el : nums){
+                if(el==val){
+                    c++;
+                }
+            }
+            if(c>n/2){
+            return val;
+           }
+        }
+        return -1;
+    }
+}
+
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+
+___________________________________________
+
+Method - 2 (sorting):
+
+ class Solution {
+    public int majorityElement(int[] nums) {
+       Arrays.sort(nums);
+       int n=nums.length;
+        int freq=0;
+       for(int i=0;i<nums.length;i++){
+        freq++;
+        if(freq>n/2){
+            return nums[i];
+        }  
+       }
+       return -1;
+    }
+}
+
+
+Time complexity : O(nlogn)
+Space Complexity : O(1)
+
+_____________________________________________
+
+Optimal Version (Moors Voting Algorithm)
+
+
+class Solution {
+    public int majorityElement(int[] nums) {
+       int freq=0;
+       int ans=0;
+       for(int i=0;i<nums.length;i++){
+        if(freq==0){
+            ans=nums[i];
+        }
+        if(ans==nums[i]){
+            freq++;
+        }
+        else{
+            freq--;
+         }
+       }
+       return ans;
+    }
+}
+
+Time Complexity : O(n)
+Space Complexity: O(1)
