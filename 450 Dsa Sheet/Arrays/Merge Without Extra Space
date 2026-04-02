@@ -1,0 +1,29 @@
+Merge Without ExtraSpace:
+
+Link : https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1
+
+Implementation:
+
+class Solution {
+    public void mergeArrays(int a[], int b[]) {
+        int n=a.length;
+        int m=b.length;
+        int i= n-1;
+        int j= 0;
+        while(i >= 0 && j <= m-1) {
+            if(a[i] > b[j]) {
+                int temp= a[i];
+                a[i]= b[j];
+                b[j]= temp;
+            }
+            i--;
+            j++;
+        }
+        Arrays.sort(a);
+        Arrays.sort(b);
+    }
+}
+
+
+Time complexity : O(nlogn+mlogm)
+Space complexity : O(1)
