@@ -1,0 +1,23 @@
+2) Kth smallest:
+
+Link : https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1
+
+Code:
+
+class Solution {
+    public int kthSmallest(int[] arr, int k) {
+        // Code here
+        Arrays.sort(arr);
+        int res=0;
+        for(int i=0;i<arr.length;i++){
+            if(i==k-1){
+                res= arr[i];
+            }
+        }
+        return res;
+    }
+}
+
+
+Time complexity : O(nlogn)
+Space complexity : O(logn)
