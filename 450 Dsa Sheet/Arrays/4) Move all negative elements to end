@@ -1,0 +1,31 @@
+Move all negative elements to end
+
+
+Link :  https://www.geeksforgeeks.org/problems/move-all-negative-elements-to-end1813/1
+
+Implementation:
+
+class Solution {
+    public void segregateElements(int[] arr) {
+        int n = arr.length;
+        int[] res = new int[n];
+        int k = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= 0) {
+                res[k++] = arr[i];
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0) {
+                res[k++] = arr[i];
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            arr[i] = res[i];
+        }
+    }
+}
+
+
+Time Complexity : O(n)
+Space COmplexity : O(n)
