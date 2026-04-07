@@ -1,0 +1,22 @@
+7) Find Largest sum contiguous Subarray
+
+Link : https://www.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1
+
+Implementation:
+
+class Solution {
+    int maxSubarraySum(int[] nums) {
+        // Code here
+        //Kadens Algorithm
+        int curr_sum=nums[0];
+        int max_sum=nums[0];
+        for(int i=1;i<nums.length;i++){
+            curr_sum=Math.max(nums[i], curr_sum+nums[i]);
+            max_sum= Math.max(curr_sum,max_sum);
+        }
+        return max_sum;
+    }
+}
+
+Time Complexity: O(n)
+Space Complexity: O(1)
