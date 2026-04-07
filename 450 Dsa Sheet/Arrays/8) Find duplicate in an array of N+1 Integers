@@ -1,0 +1,21 @@
+	8) Find duplicate in an array of N+1 Integers
+
+  Link: https://leetcode.com/problems/find-the-duplicate-number/description/
+
+  Implementation:
+
+  class Solution {
+    public int findDuplicate(int[] arr) {
+        Set<Integer> set = new HashSet<>();
+        for(int num : arr){
+            if(set.contains(num))
+                return num;
+            set.add(num);
+        }
+        return -1;
+    }
+}
+
+
+Time Complexity: O(n)
+Space Complexity: O(n)
